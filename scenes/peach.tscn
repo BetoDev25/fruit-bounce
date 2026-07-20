@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bb2qgxh3vximg"]
+
+[ext_resource type="Script" uid="uid://oxwyildcb7r6" path="res://scripts/peach.gd" id="1_1jtly"]
+[ext_resource type="Texture2D" uid="uid://d33s6dikdjoap" path="res://assets/peach.png" id="2_dwj20"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3qwa8"]
+bounce = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_roie1"]
+radius = 26.076809
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3qwa8"]
+radius = 26.019224
+
+[node name="Peach" type="RigidBody2D" unique_id=310661384 groups=["peaches"]]
+collision_layer = 2
+physics_material_override = SubResource("PhysicsMaterial_3qwa8")
+script = ExtResource("1_1jtly")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1909151287]
+texture = ExtResource("2_dwj20")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1229970419]
+shape = SubResource("CircleShape2D_roie1")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1459414954]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2038066750]
+shape = SubResource("CircleShape2D_3qwa8")

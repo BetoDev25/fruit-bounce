@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://5w2dbxpkfx4x"]
+
+[ext_resource type="Texture2D" uid="uid://dxhligqe1jki4" path="res://assets/block.png" id="1_v8cgk"]
+
+[node name="Display" type="CanvasLayer" unique_id=527180700]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1518639291]
+position = Vector2(179, 325)
+texture = ExtResource("1_v8cgk")
+
+[node name="Timer" type="Label" parent="." unique_id=1763262435]
+offset_left = 156.0
+offset_top = 499.0
+offset_right = 196.0
+offset_bottom = 544.0
+theme_override_font_sizes/font_size = 32

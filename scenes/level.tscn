@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://c6p3t04ydkmr"]
+
+[ext_resource type="PackedScene" uid="uid://xkrebc484g3" path="res://scenes/paddle.tscn" id="1_2q6dc"]
+[ext_resource type="Script" uid="uid://bfln6g8b1rut5" path="res://scripts/level.gd" id="1_mx8sn"]
+[ext_resource type="PackedScene" uid="uid://bb2qgxh3vximg" path="res://scenes/peach.tscn" id="2_w7c3h"]
+[ext_resource type="PackedScene" uid="uid://5w2dbxpkfx4x" path="res://scenes/display.tscn" id="4_mx8sn"]
+[ext_resource type="PackedScene" uid="uid://cew55tp6222u2" path="res://scenes/fail_zone.tscn" id="5_ppgk2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w8frs"]
+size = Vector2(35, 1668.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mx8sn"]
+size = Vector2(830, 20)
+
+[sub_resource type="Curve2D" id="Curve2D_2r41h"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 417, 14, 0, 0, 0, 0, 1079, 13)
+}
+point_count = 2
+
+[node name="Level" type="Node2D" unique_id=1702826642]
+script = ExtResource("1_mx8sn")
+peach_scene = ExtResource("2_w7c3h")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=393246485]
+position = Vector2(578, 323)
+
+[node name="Paddle" parent="." unique_id=422626847 instance=ExtResource("1_2q6dc")]
+position = Vector2(583, 584)
+
+[node name="Barrier" type="StaticBody2D" parent="." unique_id=797822214]
+position = Vector2(1193, 285)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Barrier" unique_id=1746082489]
+position = Vector2(-21, -256.75)
+shape = SubResource("RectangleShape2D_w8frs")
+
+[node name="Barrier2" type="StaticBody2D" parent="." unique_id=1108014062]
+position = Vector2(362, 290)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Barrier2" unique_id=1979755274]
+position = Vector2(-21, -245)
+shape = SubResource("RectangleShape2D_w8frs")
+
+[node name="Ceiling" type="StaticBody2D" parent="." unique_id=1545420618]
+position = Vector2(755, -35)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling" unique_id=134952960]
+position = Vector2(0, -35)
+shape = SubResource("RectangleShape2D_mx8sn")
+
+[node name="FruitTimer" type="Timer" parent="." unique_id=158768492]
+
+[node name="FruitPath" type="Path2D" parent="." unique_id=242730318]
+curve = SubResource("Curve2D_2r41h")
+
+[node name="FruitSpawnLocation" type="PathFollow2D" parent="FruitPath" unique_id=141974021]
+position = Vector2(748.00006, 13.500001)
+rotation = -0.0015105729
+progress = 331.00006
+
+[node name="Display" parent="." unique_id=527180700 instance=ExtResource("4_mx8sn")]
+
+[node name="FailZone" parent="." unique_id=1459776760 instance=ExtResource("5_ppgk2")]
+position = Vector2(528, 691)
+
+[connection signal="timeout" from="FruitTimer" to="." method="_on_fruit_timer_timeout"]

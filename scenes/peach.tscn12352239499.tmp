@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://c2vafw3v4w615"]
+
+[ext_resource type="Script" uid="uid://oxwyildcb7r6" path="res://scripts/peach.gd" id="1_3qwa8"]
+[ext_resource type="Texture2D" uid="uid://d33s6dikdjoap" path="res://assets/peach.png" id="1_nuqqx"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3qwa8"]
+bounce = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ovnas"]
+radius = 26.0
+
+[node name="Peach" type="RigidBody2D" unique_id=1816639887]
+collision_layer = 2
+mass = 30.48
+physics_material_override = SubResource("PhysicsMaterial_3qwa8")
+angular_damp_mode = 1
+angular_damp = 10.0
+script = ExtResource("1_3qwa8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=834979030]
+texture = ExtResource("1_nuqqx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=896514467]
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_ovnas")

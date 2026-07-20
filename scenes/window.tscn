@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://b63onj1xecnik"]
+
+[ext_resource type="Texture2D" uid="uid://dxhligqe1jki4" path="res://assets/block.png" id="1_oya5r"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1084544827]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=876908010]
+position = Vector2(180, 324)
+texture = ExtResource("1_oya5r")
