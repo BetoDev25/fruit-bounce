@@ -2,10 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://dxhligqe1jki4" path="res://assets/block.png" id="1_v8cgk"]
 [ext_resource type="Script" uid="uid://je1ym0t8ib5x" path="res://scripts/display.gd" id="1_wy1qo"]
+[ext_resource type="Script" uid="uid://g32um0mltv5d" path="res://addons/dialogue_manager/nodes/dialogue_label/dialogue_label.gd" id="2_wijb7"]
 
 [node name="Display" type="CanvasLayer" unique_id=527180700 node_paths=PackedStringArray("dialogue_label")]
 script = ExtResource("1_wy1qo")
-dialogue_label = NodePath("")
+dialogue_label = NodePath("DialogueLabel")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1518639291]
 position = Vector2(179, 325)
@@ -17,3 +18,16 @@ offset_top = 499.0
 offset_right = 196.0
 offset_bottom = 544.0
 theme_override_font_sizes/font_size = 32
+
+[node name="DialogueLabel" type="RichTextLabel" parent="." unique_id=650327574]
+anchors_preset = -1
+anchor_top = 0.53400004
+anchor_right = 0.30900002
+anchor_bottom = 0.66800004
+offset_left = 48.0
+offset_top = -0.03201294
+offset_right = -39.968018
+offset_bottom = 0.13598633
+script = ExtResource("2_wijb7")
+skip_pause_at_abbreviations = PackedStringArray("Mr", "Mrs", "Ms", "Dr", "etc", "eg", "ex")
+metadata/_custom_type_script = "uid://g32um0mltv5d"

@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dxhligqe1jki4" path="res://assets/block.png" id="1_v8cgk"]
 [ext_resource type="Script" uid="uid://je1ym0t8ib5x" path="res://scripts/display.gd" id="1_wy1qo"]
+[ext_resource type="Script" uid="uid://d1wt4ma6055l8" path="res://addons/dialogue_manager/example_balloon/example_balloon.gd" id="3_wy1qo"]
 
 [node name="Display" type="CanvasLayer" unique_id=527180700 node_paths=PackedStringArray("dialogue_label")]
 script = ExtResource("1_wy1qo")
@@ -17,3 +18,7 @@ offset_top = 499.0
 offset_right = 196.0
 offset_bottom = 544.0
 theme_override_font_sizes/font_size = 32
+
+[node name="DialogueManagerExampleBalloon" type="CanvasLayer" parent="." unique_id=1500765720]
+script = ExtResource("3_wy1qo")
+metadata/_custom_type_script = "uid://d1wt4ma6055l8"

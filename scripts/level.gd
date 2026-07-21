@@ -8,7 +8,7 @@ var score
 @onready var spawn_location = $FruitPath/FruitSpawnLocation
 
 func _ready():
-	timer.wait_time = 5.0
+	timer.wait_time = 6.0
 	timer.start()
 
 func _process(_delta):
